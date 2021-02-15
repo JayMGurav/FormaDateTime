@@ -1,0 +1,8 @@
+{
+  "name": "human-time",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jay Gurav <mrithyunjay2799@gmail.com> (http://github.com/JayMGurav)",
+  "license": "MIT",
+  "type": "module"
+}
