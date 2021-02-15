@@ -1,6 +1,6 @@
 ## recreting tinyTime
 
-> this repo is just a recreating of ![tinyTime](https://github.com/aweary/tinytime) by Brandon Dail, please use that repo, this is just for practice sake
+> this repo is just a recreating of [tinyTime](https://github.com/aweary/tinytime) by Brandon Dail, please use that repo, this is just for practice sake
 
 ### Substitutions
 
