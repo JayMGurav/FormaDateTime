@@ -1,4 +1,4 @@
-## humanTime
+## FormaTime
 
 parse time to human readable form.
 
