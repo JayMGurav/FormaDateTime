@@ -1,9 +1,8 @@
-## FormaTime
+## FormaDateTime
 
 parse time to human readable form.
 
 ### Identifiers
-
 - `MMMM`: Full Month (January)
 - `MM`: Partial Month (Jan)
 - `Mo`: Numeric Month (01)
@@ -19,6 +18,7 @@ parse time to human readable form.
 - `pa`: AM/PM
 
 ```js
+<!-- default options -->
 options : {
   padMonth : true,
   padDays: true,
