@@ -1,20 +1,4 @@
-import {
-  FullYear,
-  PartialYear,
-  FullMonth,
-  PartialMonth,
-  NumberMonth,
-  DayOfTheMonth,
-  DayOfTheWeek,
-  Day,
-  Hour24,
-  Hour,
-  Minutes,
-  Seconds,
-  PostOrAnteMeridiem,
-  UserText,
-} from "./subs.js";
-import { TDay, IOptions, TMonth, TokenType, Tokens } from "./types";
+import { TDay, IOptions, TMonth, Tokens, TokenType } from "./types";
 import { padWithZeros, suffix } from "./utils";
 
 const months: Array<TMonth> = [
@@ -58,53 +42,54 @@ export default function compiler(
   while (index < tokens.length) {
     const token = tokens[index];
     switch (token.t) {
-      case UserText:
+      case TokenType.UserText:
         // if it is user text push it to compiled text
         compiled += token.v;
         break;
-      case Day:
+      case TokenType.Day:
         compiled += suffix(day);
         break;
-      case DayOfTheWeek:
+      case TokenType.DayOfTheWeek:
         compiled += days[date.getDay()];
         break;
-      case DayOfTheMonth:
+      case TokenType.DayOfTheMonth:
         compiled += options.padDays ? padWithZeros(day) : day;
         break;
-      case PartialMonth:
+      case TokenType.PartialMonth:
         compiled += months[month].slice(0, 3);
         break;
-      case NumberMonth:
+      case TokenType.NumberMonth:
         compiled += options.padMonths ? padWithZeros(month + 1) : month + 1;
         break;
-      case FullMonth:
+      case TokenType.FullMonth:
         compiled += months[month];
         break;
-      case PartialYear:
+      case TokenType.PartialYear:
         compiled += String(year).slice(2);
         break;
-      case FullYear:
+      case TokenType.FullYear:
         compiled += year;
         break;
-      case Hour24:
+      case TokenType.Hour24:
         compiled += hrs;
         break;
-      case Hour:
+      case TokenType.Hour:
         let hour = hrs === 0 || hrs === 12 ? 12 : hrs % 12;
         let paddedHour: string;
         if (options.padHours) {
           paddedHour = padWithZeros(hour);
           compiled += paddedHour;
+        } else {
+          compiled += hour;
         }
-        compiled += hour;
         break;
-      case Minutes:
+      case TokenType.Minutes:
         compiled += padWithZeros(min);
         break;
-      case Seconds:
+      case TokenType.Seconds:
         compiled += padWithZeros(sec);
         break;
-      case PostOrAnteMeridiem:
+      case TokenType.PostOrAnteMeridiem:
         compiled += hrs >= 12 ? "PM" : "AM";
         break;
     }

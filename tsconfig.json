@@ -4,6 +4,7 @@
     "module": "ES2020",
     "skipLibCheck": true,
     "sourceMap": true,
+    "rootDir": "src",
     "outDir": "./dist/esm",
     "declaration": true,
     "removeComments": true,
@@ -21,7 +22,6 @@
     "forceConsistentCasingInFileNames": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    // "resolveJsonModule": true,
     "baseUrl": "."
   },
   "exclude": ["node_modules"],

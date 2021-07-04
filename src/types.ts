@@ -27,19 +27,19 @@ export interface IOptions {
 
 export enum TokenType {
   UserText = "a",
-  MMMM = "b",
-  MM = "c",
-  Mo = "n",
-  YYYY = "d",
-  YY = "e",
-  dddd = "f",
-  Do = "k",
-  DD = "l",
-  h = "g",
-  H = "m",
-  mm = "h",
-  ss = "i",
-  pa = "j",
+  FullMonth = "b",
+  PartialMonth = "c",
+  NumberMonth = "n",
+  FullYear = "d",
+  PartialYear = "e",
+  DayOfTheWeek = "f",
+  Day = "k",
+  DayOfTheMonth = "l",
+  Hour = "g",
+  Hour24 = "m",
+  Minutes = "h",
+  Seconds = "i",
+  PostOrAnteMeridiem = "j",
 }
 
 export type Tokens = Array<{ t: TokenType; v?: string }>;

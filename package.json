@@ -1,11 +1,17 @@
 {
   "name": "format_date_time",
   "version": "1.0.0",
-  "main": "index.js",
   "author": "Jay Gurav <mrithyunjay2799@gmail.com> (http://github.com/JayMGurav)",
   "license": "MIT",
-  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "files": [
+    "dist/"
+  ],
+  "type": "commonjs",
   "scripts": {
+    "dev": "nodemon dist/cjs/try.js",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
     "watch": "tsc --watch"
   },
   "devDependencies": {

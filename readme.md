@@ -2,7 +2,7 @@
 
 parse time to human readable form.
 
-### Substitutions
+### Identifiers
 
 - `MMMM`: Full Month (January)
 - `MM`: Partial Month (Jan)
@@ -24,4 +24,9 @@ options : {
   padDays: true,
   padHours: true
 }
+```
+
+```
+const publishedOn = new FormatDateTime("Published on: {DD} {MMMM} {YYYY}");
+console.log(publishedOn.render(new Date()));
 ```
