@@ -1,6 +1,6 @@
 ## FormaDateTime
 
-Parse and render date/time to human readable form. Just provide a string with below mentioned *Identifiers* in `{}` as `{MMMM}` once, and render it anywhere with any date object. Since the passed template is parsed once and can be rendered anytime with whatever date obj provided, so provides better performance. For different templates we have to create new instance.
+Parse and render date/time to human readable form. Just provide a string with below mentioned *Identifiers* in `{}` as `{MMMM}` once, and render it anywhere/any number of times with any date object. Since the passed string/template is parsed once and can be rendered any number of times with whatever date obj provided, which makes it performant, flexible and easy to use. For different templates we have to create new instance.
 
 ### Identifiers
 - `MMMM`: Full Month (January)
