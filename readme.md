@@ -1,6 +1,6 @@
 ## FormaDateTime
 
-parse time to human readable form.
+Parse and render date/time to human readable form. Just provide a template with below mentioned *Identifiers* in `{}` as `{MMMM}` once, and render it anywhere with any date object. Since the passed template is parsed once and can be rendered anytime with whatever date obj provided, so provides better performance. For different templates we have to create new instance.
 
 ### Identifiers
 - `MMMM`: Full Month (January)
@@ -17,6 +17,8 @@ parse time to human readable form.
 - `ss`: Seconds -zero padded (05)
 - `pa`: AM/PM
 
+
+## Options
 ```js
 <!-- default options -->
 options : {
@@ -25,8 +27,12 @@ options : {
   padHours: true
 }
 ```
-
+## Usage
 ```
-const publishedOn = new FormatDateTime("Published on: {DD} {MMMM} {YYYY}");
-console.log(publishedOn.render(new Date()));
+const publishedOn = new FormatDateTime("Published on: {Do} {MMMM} {YYYY}", {
+  padMonth : true,
+  padDays: true,
+  padHours: true
+});
+console.log(publishedOn.render(new Date())); //Published on: 24th December 2012
 ```
